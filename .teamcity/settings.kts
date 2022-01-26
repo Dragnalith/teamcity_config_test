@@ -31,6 +31,22 @@ project {
     buildType(Experiment3_Print)
 }
 
+object PrePrint : BuildType({
+    id("Print")
+    name = "PrePrint"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            name = "PrePrint Do"
+            scriptContent = "type README.md"
+        }
+    }
+})
+
 object Experiment3_Print : BuildType({
     id("Print")
     name = "Hello World Git6"
@@ -49,6 +65,12 @@ object Experiment3_Print : BuildType({
     triggers {
         vcs {
             branchFilter = ""
+        }
+    }
+
+    dependencies {
+        snapshot(PrePrint) {
+            onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }
 })
