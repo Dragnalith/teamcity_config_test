@@ -33,7 +33,7 @@ project {
 
 object Experiment3_Print : BuildType({
     id("Print")
-    name = "Print A File"
+    name = "Hello World"
 
     vcs {
         root(DslContext.settingsRoot)
