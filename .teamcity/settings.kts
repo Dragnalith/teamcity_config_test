@@ -33,7 +33,7 @@ project {
 
 object Experiment3_Print : BuildType({
     id("Print")
-    name = "Hello World Git"
+    name = "Hello World Git3"
 
     vcs {
         root(DslContext.settingsRoot)
@@ -41,7 +41,7 @@ object Experiment3_Print : BuildType({
 
     steps {
         script {
-            name = "MyStep"
+            name = "MyStep3"
             scriptContent = "type README.md"
         }
     }
