@@ -32,7 +32,7 @@ project {
 }
 
 object PrePrint : BuildType({
-    id("Print")
+    id("PrePrint")
     name = "PrePrint"
 
     vcs {
