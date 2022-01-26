@@ -27,11 +27,12 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2021.1"
 
 project {
-    buildType(PrePrePrint)
+    //buildType(PrePrePrint)
     buildType(PrePrint)
     buildType(Experiment3_Print)
 }
 
+/*
 object PrePrePrint : BuildType({
     id("PrePrePrint")
     name = "PrePrePrint"
@@ -47,6 +48,7 @@ object PrePrePrint : BuildType({
         }
     }
 })
+ */
 
 object PrePrint : BuildType({
     id("PrePrint")
@@ -62,12 +64,13 @@ object PrePrint : BuildType({
             scriptContent = "type README.md"
         }
     }
-
+/*
     dependencies {
         snapshot(PrePrePrint) {
             onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }
+ */
 })
 
 object Experiment3_Print : BuildType({
