@@ -31,6 +31,7 @@ project {
     buildType(Experiment3_Print)
 }
 
+/*
 object PrePrePrint : BuildType({
     id("PrePrePrint")
     name = "PrePrePrint"
@@ -46,6 +47,7 @@ object PrePrePrint : BuildType({
         }
     }
 })
+ */
 
 object PrePrint : BuildType({
     id("PrePrint")
@@ -61,12 +63,13 @@ object PrePrint : BuildType({
             scriptContent = "type README.md"
         }
     }
-
+/*
     dependencies {
         snapshot(PrePrePrint) {
             onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }
+ */
 })
 
 object Experiment3_Print : BuildType({
