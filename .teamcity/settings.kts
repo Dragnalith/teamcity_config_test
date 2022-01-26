@@ -31,6 +31,22 @@ project {
     buildType(Experiment3_Print)
 }
 
+object PrePrePrint : BuildType({
+    id("PrePrePrint")
+    name = "PrePrePrint"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            name = "PrePrePrint Do"
+            scriptContent = "type README.md"
+        }
+    }
+})
+
 object PrePrint : BuildType({
     id("PrePrint")
     name = "PrePrint"
@@ -43,6 +59,12 @@ object PrePrint : BuildType({
         script {
             name = "PrePrint Do"
             scriptContent = "type README.md"
+        }
+    }
+
+    dependencies {
+        snapshot(PrePrePrint) {
+            onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }
 })
