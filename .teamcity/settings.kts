@@ -41,6 +41,7 @@ object Experiment3_Print : BuildType({
 
     steps {
         script {
+            name = "MyStep"
             scriptContent = "type README.md"
         }
     }
